@@ -39,14 +39,6 @@ module.exports = {
                     "css-loader",
                     // Compiles Sass to CSS
                     "postcss-loader",
-                    // {
-                    //     loader: "postcss-loader",
-                    //     options: {
-                    //         postcssOptions: {
-                    //             plugins: [require("tailwindcss")],
-                    //         },
-                    //     },
-                    // },
                 ],
             },
             {
