@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .overlay {
+        @apply absolute;
+    }
+
+    .overlay * {
+        @apply transition-all duration-200;
+    }
+
+    .overlay.hoverable>* {
+        @apply opacity-0;
+    }
+
+    .overlay.hoverable:hover>* {
+        @apply opacity-100;
+    }
+
+    .overlay .video {
+        @apply absolute transform bg-blue-200 bg-no-repeat bg-center rounded-full flex items-center justify-center;
+        background-image: url('/src/img/img-static/btn-play.svg');
+        top: 50%;
+        left: 50%;
+    }
+
+    .hero .hero-image,
+    .hero .hero-caption {
+        min-height: 90vh;
+    }
+
+    .hero .hero-cta {
+        @apply w-12 h-12;
+        transform: translateX(-75px) translateY(-50%);
+        background-size: 37.5%;
+    }
+
+    /* card */
+    .card .card-shadow {
+        @apply transition duration-300 shadow-none h-full;
+    }
+
+    .card:hover .card-shadow {
+        @apply shadow-lg;
+    }
+
+    /* breadcrumb */
+    ul.breadcrumb {
+        @apply flex flex-row items-center text-lg;
+    }
+
+    ul.breadcrumb li:not(:last-child):after {
+        content: "/";
+        @apply px-4;
+    }
+
+    ul.breadcrumb li:not(:last-child) a {
+        @apply font-light;
+    }
+
+    ul.breadcrumb li:last-child a {
+        @apply font-semibold;
+    }
+
+}
+
+@screen md {
+
+    .hero .hero-image,
+    .hero .hero-caption {
+        min-height: auto;
+    }
+
+    .hero .hero-cta {
+        @apply w-20 h-20 -translate-x-1/2 -translate-y-1/2;
+        background-size: auto;
+    }
+
+    .slider {
+        @apply flex-row;
+    }
+
+    .slider .thumbnail {
+        @apply w-auto order-first block overflow-visible pl-0;
+    }
+
+    .slider .preview {
+        height: 609px;
+        width: 560px;
+    }
+}
+
+
+@layer utilities {
+    .stretched-link {
+        @apply absolute inset-0 z-10 cursor-pointer;
+    }
+
+    .grid {
+        grid-auto-flow: dense;
+        grid-auto-rows: minmax(180px, auto);
+    }
+}
+
+a.cart svg g circle.dot {
+    @apply hidden;
+}
+
+a.cart.cart-filled svg g circle.dot {
+    @apply block;
+}
+
+button[disabled] {
+    @apply bg-gray-300 text-gray-400 cursor-not-allowed;
+}
