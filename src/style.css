@@ -65,6 +65,34 @@
         @apply font-semibold;
     }
 
+    /* slider */
+    .slider {
+        @apply flex my-4 flex-col;
+    }
+
+    .slider .thumbnail {
+        @apply w-screen order-last -mx-2 overflow-auto flex pl-4;
+    }
+
+    .slider .thumbnail .item {
+        @apply bg-gray-100 relative rounded-lg mb-4 cursor-pointer;
+        width: 106px;
+        height: 106px;
+    }
+
+    .slider .thumbnail .item:after {
+        content: "";
+        @apply transition duration-200 absolute inset-0 bg-black bg-opacity-0 border-2 border-black border-opacity-0 rounded-lg;
+    }
+
+    .slider .thumbnail .item.selected:after {
+        @apply bg-opacity-20 border-opacity-100;
+    }
+
+    .slider .preview {
+        @apply mb-4 px-4;
+        height: 320px;
+    }
 }
 
 @screen md {

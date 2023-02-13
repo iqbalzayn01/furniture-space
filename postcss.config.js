@@ -5,8 +5,6 @@ module.exports = {
   ],
 };
 
-
-
 // const tailwindcss = require('tailwindcss');
 // module.exports = {
 //   plugins: [
