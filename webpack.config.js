@@ -23,6 +23,10 @@ module.exports = {
             filename: 'cart.html',
             template: './src/cart.html',
         }),
+        new HtmlWebpackPlugin({
+            filename: 'success.html',
+            template: './src/success.html',
+        }),
     ],
     devtool: false,
     module: {
